@@ -20,43 +20,6 @@
         android:layout_centerVertical="true"
         android:layout_alignStart="@+id/textView2" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/oauth2LoginButton"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/userName"
-        android:layout_below="@+id/oauth2LoginButton"
-        android:layout_alignParentStart="true"
-        android:text="Hello Bob" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Coupons"
-        android:id="@+id/couponButton"
-        android:onClick="onCouponsButton"
-        android:clickable="true"
-        android:layout_marginTop="77dp"
-        android:layout_below="@+id/fuelScore"
-        android:layout_toStartOf="@+id/oauth2LoginButton" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vehicles"
-        android:id="@+id/vehiclesButton"
-        android:clickable="true"
-        android:onClick="onVehicleButton"
-        android:layout_alignTop="@+id/couponButton"
-        android:layout_toEndOf="@+id/oauth2LoginButton" />
-
     <TextView
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -87,5 +50,51 @@
         android:background="@drawable/goal_reached"
         android:layout_alignBottom="@+id/goal"
         android:layout_alignEnd="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Car A"
+        android:id="@+id/carName"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:textSize="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="More Info"
+        android:id="@+id/carInfo"
+        android:layout_below="@+id/fuelScore"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="69dp"
+        android:textSize="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fuel Level"
+        android:id="@+id/fuelLevel"
+        android:layout_below="@+id/carInfo"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Distance"
+        android:id="@+id/totalDistance"
+        android:layout_below="@+id/fuelLevel"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/button"
+        android:layout_below="@+id/totalDistance"
+        android:layout_alignParentStart="true"
+        android:nestedScrollingEnabled="false"
+        android:onClick="onBackButton" />
 
 </RelativeLayout>

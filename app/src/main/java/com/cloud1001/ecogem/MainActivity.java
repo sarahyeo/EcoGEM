@@ -6,10 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +16,6 @@ import com.mojio.mojiosdk.models.Trip;
 import com.mojio.mojiosdk.models.User;
 import com.mojio.mojiosdk.models.Vehicle;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -28,8 +25,8 @@ public class MainActivity extends Activity {
     // These values will match the keys given to you for your Mojio application in the
     // Mojio Developer panel.
     //===========================================================================
-    private final static String MOJIO_APP_ID = "<YOUR_APP_ID>";
-    private final static String REDIRECT_URL = "<YOUR_APP_REDIRECT>://"; // Example "myfirstmojio://"
+    private final static String MOJIO_APP_ID = "980bfaf7-eb5a-4f7f-ba17-9f2ecd79de08";
+    private final static String REDIRECT_URL = "ecogem://"; // Example "myfirstmojio://"
 
     //===========================================================================
     // Activity properties
@@ -99,6 +96,7 @@ public class MainActivity extends Activity {
             if (resultCode == RESULT_OK) {
                 Toast.makeText(MainActivity.this, "Logged in successfully", Toast.LENGTH_LONG).show();
                 getCurrentUser(); // Now attempt to get user info
+
             }
             else {
                 Toast.makeText(MainActivity.this, "Problem logging in", Toast.LENGTH_LONG).show();
@@ -155,7 +153,7 @@ public class MainActivity extends Activity {
 
                 goal.setText("Goal:" + Integer.toString(calculateGoal()));
                 goal.setVisibility(View.VISIBLE);
-                goalIcon.setBackgroundResource(R.drawable.goalReached);
+                goalIcon.setBackgroundResource(R.drawable.goal_reached);
                 goalIcon.setVisibility(View.VISIBLE);
 
                 if (mUserVehicles.length == 0) {
@@ -261,8 +259,8 @@ public class MainActivity extends Activity {
        float fuel = 0;
         float totalDistance = 0;
        for (Trip t: mUserTrips) {
-           fuel = fuel + t.FuelEfficiency * t.Distance;
-           totalDistance = totalDistance + t.Distance;
+           fuel += t.FuelEfficiency * t.Distance;
+           totalDistance += t.Distance;
        }
         return (int) (fuel / totalDistance);
 
