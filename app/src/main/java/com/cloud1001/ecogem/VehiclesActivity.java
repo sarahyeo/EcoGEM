@@ -47,6 +47,11 @@ import java.util.List;
 
         public void initVehicles() {
             List<TextView> text = new ArrayList<TextView>();
+            if(userVehicles.equals(null) || userVehicles.equals(0)){
+                findViewById(R.id.button0).setVisibility(View.GONE);
+                findViewById(R.id.button1).setVisibility(View.GONE);
+                findViewById(R.id.button2).setVisibility(View.GONE);
+            }
 
             for (int i = 0; i < userVehicles.length; i++) {
                 switch (i) {
