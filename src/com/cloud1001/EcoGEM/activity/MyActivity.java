@@ -1,7 +1,8 @@
-package com.cloud1001.EcoGEM;
+package com.cloud1001.EcoGEM.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import com.cloud1001.EcoGEM.R;
 
 public class MyActivity extends Activity
 {
