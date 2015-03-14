@@ -35,7 +35,10 @@ public class LogActivity extends Activity{
     }
 
     public void initTextView() {
-        if (Singleton.getInstance().userTrips == null) return;
+        if (Singleton.getInstance().userTrips.length == 0 || Singleton.getInstance().userTrips == null)
+            for (int i=0; i<10; i++) {
+                getTextView(i).setVisibility(View.GONE);
+            }
         int numLogs = Math.min(Singleton.getInstance().userTrips.length, 10);
         List<TextView> text = new ArrayList<>();
         for (int i=0; i<numLogs; i++) {
