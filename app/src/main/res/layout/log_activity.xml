@@ -23,61 +23,61 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Text"
+                android:text=""
                 android:id="@+id/text_0"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Text"
+                android:text=""
                 android:id="@+id/text_1"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Text"
+                android:text=""
                 android:id="@+id/text_2"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Text"
+                android:text=""
                 android:id="@+id/text_3"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Text"
+                android:text=""
                 android:id="@+id/text_4"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Text"
+                android:text=""
                 android:id="@+id/text_5"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Text"
+                android:text=""
                 android:id="@+id/text_6"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Text"
+                android:text=""
                 android:id="@+id/text_7"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Text"
+                android:text=""
                 android:id="@+id/text_8"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Text"
+                android:text=""
                 android:id="@+id/text_9"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <Button

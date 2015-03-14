@@ -42,7 +42,7 @@ public class LogActivity extends Activity{
 
     public void initTextView() {
         if (Singleton.getInstance().userTrips == null) return;
-        int numLogs = Math.max(Singleton.getInstance().userTrips.length, 10);
+        int numLogs = Math.min(Singleton.getInstance().userTrips.length, 10);
         List<TextView> text = new ArrayList<>();
         for (int i=0; i<numLogs; i++) {
             text.set(i, getTextView(i));
