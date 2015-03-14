@@ -13,9 +13,6 @@ import com.mojio.mojiosdk.models.Vehicle;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by Sarah on 2015-03-14.
- */
 public class CarActivity extends Activity {
 
     private Singleton singleton = Singleton.getInstance();
