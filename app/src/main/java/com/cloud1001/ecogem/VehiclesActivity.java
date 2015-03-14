@@ -24,7 +24,6 @@ import java.util.List;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
 
             requestWindowFeature(Window.FEATURE_NO_TITLE);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -55,21 +54,33 @@ import java.util.List;
                         text.set(i, (TextView) findViewById(R.id.button0));
                         findViewById(R.id.button1).setVisibility(View.GONE);
                         findViewById(R.id.button2).setVisibility(View.GONE);
-                        intent.putExtra("car", i);
                         break;
                     case 1:
                         text.set(i, (TextView) findViewById(R.id.button1));
                         findViewById(R.id.button1).setVisibility(View.VISIBLE);
-                        intent.putExtra("car", i);
                         break;
                     case 2:
                         text.set(i, (TextView) findViewById(R.id.button2));
                         findViewById(R.id.button2).setVisibility(View.VISIBLE);
-                        intent.putExtra("car", i);
                         break;
                 }
                 text.get(i).setText(userVehicles[i].VIN);
 
+            }
+        }
+
+        public void onCarButton(View view) {
+            Intent intent = new Intent(this, CarActivity.class);
+            switch(view.getId()){
+                case R.id.button0:
+                    intent.putExtra("car",0);
+                    break;
+                case R.id.button1:
+                    intent.putExtra("car",1);
+                    break;
+                case R.id.button2:
+                    intent.putExtra("car",2);
+                    break;
             }
             startActivity(intent);
         }

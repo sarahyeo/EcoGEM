@@ -25,6 +25,7 @@
         android:enabled="true"
         android:height="75dp"
         android:width="250dp"
+        android:onClick="onCarButton"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="59dp" />
@@ -35,6 +36,7 @@
         android:id="@+id/button1"
         android:layout_gravity="center_horizontal"
         android:width="250dp"
+        android:onClick="onCarButton"
         android:clickable="true"
         android:enabled="true"
         android:height="75dp"
@@ -48,6 +50,7 @@
         android:layout_gravity="center_horizontal"
         android:width="250dp"
         android:height="75dp"
+        android:onClick="onCarButton"
         android:clickable="true"
         android:enabled="true"
         android:layout_below="@+id/button0"
