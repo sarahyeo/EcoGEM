@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,7 +46,8 @@ public class MainActivity extends Activity {
     public Trip[] mUserTrips;
 
     private Button mLoginButton, mCouponButton, mVehiclesButton;
-    private TextView mUserName, fuelScore;
+    private TextView mUserName, fuelScore, goal;
+    private ImageView goalIcon;
 
 
     @Override
@@ -65,6 +67,10 @@ public class MainActivity extends Activity {
         mCouponButton.setVisibility(View.GONE);
         mVehiclesButton = (Button)findViewById(R.id.vehiclesButton);
         mVehiclesButton.setVisibility(View.GONE);
+        goal = (TextView)findViewById(R.id.goal);
+        goal.setVisibility(View.GONE);
+        goalIcon = (ImageView)findViewById(R.id.goalIcon);
+        goalIcon.setVisibility(View.GONE);
 
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +118,7 @@ public class MainActivity extends Activity {
                 try {
                     mCurrentUser = result[0]; // Save user info so we can use ID later
                     singleton.currentUser = mCurrentUser;
+                    mCouponButton.setVisibility(View.VISIBLE);
 
                     // Show user data
                     mUserName.setText("Hello " + mCurrentUser.FirstName + " " + mCurrentUser.LastName);
@@ -145,6 +152,11 @@ public class MainActivity extends Activity {
                 mUserVehicles = result; // Save
                 singleton.userVehicles = mUserVehicles;
                 mVehiclesButton.setVisibility(View.VISIBLE);
+
+                goal.setText("Goal:" + Integer.toString(calculateGoal()));
+                goal.setVisibility(View.VISIBLE);
+                goalIcon.setBackgroundResource(R.drawable.goalReached);
+                goalIcon.setVisibility(View.VISIBLE);
 
                 if (mUserVehicles.length == 0) {
                     Toast.makeText(MainActivity.this, "No vehicles found", Toast.LENGTH_LONG).show();
@@ -181,6 +193,10 @@ public class MainActivity extends Activity {
             public void onSuccess(Trip[] result) {
                 mUserTrips = result; // Save
                 singleton.userTrips = mUserTrips;
+
+                fuelScore.setText(Integer.toString(calculateFuelScore()));
+                fuelScore.setVisibility(View.VISIBLE);
+
 
                 if (mUserTrips.length == 0) {
                     Toast.makeText(MainActivity.this, "No trips found", Toast.LENGTH_LONG).show();
@@ -248,7 +264,11 @@ public class MainActivity extends Activity {
            fuel = fuel + t.FuelEfficiency * t.Distance;
            totalDistance = totalDistance + t.Distance;
        }
-        int result = (int) (fuel / totalDistance);
-        return  result;
+        return (int) (fuel / totalDistance);
+
+    }
+
+    public int calculateGoal() {
+        return 8;
     }
 }
