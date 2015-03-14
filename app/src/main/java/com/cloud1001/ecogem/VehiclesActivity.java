@@ -25,6 +25,7 @@ import java.util.List;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
+               /*
             requestWindowFeature(Window.FEATURE_NO_TITLE);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                     WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -35,7 +36,7 @@ import java.util.List;
                             | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE);
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE);*/
 
             setContentView(R.layout.activity_vehicle);
 
@@ -46,7 +47,6 @@ import java.util.List;
 
         public void initVehicles() {
             List<TextView> text = new ArrayList<TextView>();
-            Intent intent = new Intent(this, CarActivity.class);
 
             for (int i = 0; i < userVehicles.length; i++) {
                 switch (i) {
@@ -93,9 +93,7 @@ import java.util.List;
             Intent intent1 = new Intent(this, LogActivity.class);
             startActivity(intent1);
         }
-
-
-    }
+ }
 
 
 

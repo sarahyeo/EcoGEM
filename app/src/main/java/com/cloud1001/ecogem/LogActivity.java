@@ -1,10 +1,7 @@
 package com.cloud1001.ecogem;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -19,7 +16,8 @@ public class LogActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.log_activity);
+        initTextView();
     }
 
     public void hideNavigation() {
@@ -34,10 +32,6 @@ public class LogActivity extends Activity{
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE);
-
-        setContentView(R.layout.log_activity);
-
-        initTextView();
     }
 
     public void initTextView() {

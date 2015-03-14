@@ -58,21 +58,27 @@ public class CarActivity extends Activity {
         }
 
         goal.setText(Integer.toString(calculateGoal()));
-        carName.setText(vehicles[vehicle].getNameDescription());
-        fuelLevel.setText(Integer.toString((int) vehicles[vehicle].FuelLevel));
+
+        //carName.setText(vehicles[vehicle].getNameDescription());
+
+        //fuelLevel.setText(Integer.toString((int) vehicles[vehicle].FuelLevel));
+
         totalDistance.setText(Integer.toString(totalDistanceInt));
     }
 
 
     public List<Trip> sortTrips() {
         List<Trip> sortedTrips = new LinkedList<Trip>();
-        String vehicleId = vehicles[vehicle]._id;
-        for (Trip t: trips) {
-            if (t.VehicleId.equals(vehicleId)) {
-                sortedTrips.add(t);
+        if (vehicles != null && vehicles.length != 0) {
+            String vehicleId = vehicles[vehicle]._id;
+            if (trips != null && trips.length != 0) {
+                for (Trip t : trips) {
+                    if (t.VehicleId.equals(vehicleId)) {
+                        sortedTrips.add(t);
+                    }
+                }
             }
         }
-
         return sortedTrips;
     }
 
@@ -80,14 +86,19 @@ public class CarActivity extends Activity {
         float result = 0;
         float distance = 0;
         List<Trip> trips = sortTrips();
-        for (Trip t : trips) {
-            result += (t.FuelEfficiency * t.Distance);
-            distance += t.Distance;
+        if (trips != null) {
+            for (Trip t : trips) {
+                result += (t.FuelEfficiency * t.Distance);
+                distance += t.Distance;
+            }
+
+            totalDistanceInt = (int) distance;
+            return  (int) (result/distance);
+        } else {
+            totalDistanceInt = (int) distance;
+            return  (int) result;
         }
 
-        totalDistanceInt = (int) distance;
-
-        return  (int) (result/distance);
     }
 
     public int calculateGoal() {
@@ -100,7 +111,7 @@ public class CarActivity extends Activity {
 
     // Start new VehiclesActivity
     public void onBackButton(View view) {
-        startActivity(new Intent(this, VehiclesActivity.class));
+        finish();
     }
 
 }
