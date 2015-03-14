@@ -5,9 +5,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * Created by Sarah on 2015-03-13.
- */
 public class MojioAPI {
     private static final String MOJIO_API_BASE = "https://api.moj.io:443/v1/Trips?";
 
