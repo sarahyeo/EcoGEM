@@ -38,14 +38,14 @@ public class MainActivity extends Activity {
 
     // The main mojio client object; allows login and data retrieval to occur.
     private MojioClient mMojio;
+    private Singleton singleton;
 
-    private User mCurrentUser;
-    private Vehicle[] mUserVehicles;
-    private Trip[] mUserTrips;
+    public User mCurrentUser;
+    public Vehicle[] mUserVehicles;
+    public Trip[] mUserTrips;
 
-    private Button mLoginButton;
-    private TextView mUserName, mUserEmail;
-    private ListView mVehicleList;
+    private Button mLoginButton, mCouponButton, mVehiclesButton;
+    private TextView mUserName, fuelScore;
 
 
     @Override
@@ -55,6 +55,16 @@ public class MainActivity extends Activity {
 
         // Setup mojio client with app keys.
         mMojio = new MojioClient(this, MOJIO_APP_ID, null, REDIRECT_URL);
+        singleton = Singleton.getInstance();
+
+        mLoginButton = (Button)findViewById(R.id.oauth2LoginButton);
+        mUserName = (TextView)findViewById(R.id.userName);
+        fuelScore = (TextView)findViewById(R.id.fuelScore);
+        fuelScore.setVisibility(View.GONE);
+        mCouponButton = (Button)findViewById(R.id.couponButton);
+        mCouponButton.setVisibility(View.GONE);
+        mVehiclesButton = (Button)findViewById(R.id.vehiclesButton);
+        mVehiclesButton.setVisibility(View.GONE);
 
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,10 +111,10 @@ public class MainActivity extends Activity {
                 // Should have one result
                 try {
                     mCurrentUser = result[0]; // Save user info so we can use ID later
+                    singleton.currentUser = mCurrentUser;
 
                     // Show user data
                     mUserName.setText("Hello " + mCurrentUser.FirstName + " " + mCurrentUser.LastName);
-                    mUserEmail.setText(mCurrentUser.Email);
                     mLoginButton.setVisibility(View.GONE);
 
                     getUserVehicles();
@@ -133,22 +143,21 @@ public class MainActivity extends Activity {
             @Override
             public void onSuccess(Vehicle[] result) {
                 mUserVehicles = result; // Save
+                singleton.userVehicles = mUserVehicles;
+                mVehiclesButton.setVisibility(View.VISIBLE);
 
                 if (mUserVehicles.length == 0) {
                     Toast.makeText(MainActivity.this, "No vehicles found", Toast.LENGTH_LONG).show();
                 }
 
                 // Create list data from result
+                /*
                 ArrayList<String> listData = new ArrayList<String>();
                 Vehicle v;
                 for (int i = 0; i < mUserVehicles.length; i++) {
                     v = result[i];
                     listData.add(String.format("%s %s", v.getNameDescription(), v.LicensePlate));
-                }
-
-                // Show result in list
-                ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, listData);
-                mVehicleList.setAdapter(itemsAdapter);
+                }*/
 
             }
 
@@ -171,18 +180,20 @@ public class MainActivity extends Activity {
             @Override
             public void onSuccess(Trip[] result) {
                 mUserTrips = result; // Save
+                singleton.userTrips = mUserTrips;
 
                 if (mUserTrips.length == 0) {
                     Toast.makeText(MainActivity.this, "No trips found", Toast.LENGTH_LONG).show();
                 }
 
+                /*
                 // Create list data from result
                 ArrayList<String> listData = new ArrayList<String>();
                 Trip t;
                 for (int i = 0; i < mUserTrips.length; i++) {
                     t = result[i];
                     listData.add(String.format("%s %s", t.Distance, t.FuelEfficiency));
-                }
+                }*/
 
                 // Show result in list
                // ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, listData);
@@ -218,5 +229,26 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    // Start new VehiclesActivity
+    public void onVehicleButton(View view) {
+        startActivity(new Intent(this, VehiclesActivity.class));
+    }
+
+    // Start new CouponsActivity
+    public void onCouponsButton(View view) {
+        startActivity(new Intent(this, CouponsActivity.class));
+    }
+
+    public int calculateFuelScore() {
+       float fuel = 0;
+        float totalDistance = 0;
+       for (Trip t: mUserTrips) {
+           fuel = fuel + t.FuelEfficiency * t.Distance;
+           totalDistance = totalDistance + t.Distance;
+       }
+        int result = (int) (fuel / totalDistance);
+        return  result;
     }
 }
