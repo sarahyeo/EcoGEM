@@ -3,9 +3,6 @@ package com.cloud1001.ecogem;
 import android.app.Activity;
 import android.os.Bundle;
 
-/**
- * Created by Sarah on 2015-03-14.
- */
 public class CarActivity extends Activity {
 
     @Override
