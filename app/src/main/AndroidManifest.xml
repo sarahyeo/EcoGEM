@@ -18,6 +18,8 @@
         </activity>
         <activity android:name="com.mojio.mojiosdk.networking.OAuthLoginActivity" >
         </activity>
+        <activity android:name=".HomeActivity" >
+        </activity>
         <activity android:name=".CarActivity">
         </activity>
         <activity android:name=".LogActivity">
