@@ -22,9 +22,7 @@ public class CarActivity extends Activity {
     private Vehicle[] vehicles;
     private int totalDistanceInt;
 
-    private boolean goalMet = false;
-
-    private TextView fuelScore, goal, carName, fuelLevel, totalDistance;
+    private TextView fuelScore, goal, carName, fuelLevel, totalDistance, lastFuelE, lastDistance;
     private ImageView goalIcon;
 
     @Override
@@ -44,30 +42,42 @@ public class CarActivity extends Activity {
         fuelLevel = (TextView)findViewById(R.id.fuelLevel);
         carName = (TextView)findViewById(R.id.carName);
         totalDistance = (TextView)findViewById(R.id.totalDistance);
+        lastFuelE = (TextView)findViewById(R.id.lastFuelE);
+        lastDistance = (TextView)findViewById(R.id.lastDistance);
 
         initScore();
     }
 
     public void initScore() {
 
-        fuelScore.setText(Integer.toString(calculateScore()));
+        String s = String.format("%.2f", calculateScore());
+
+        fuelScore.setText(s);
 
         if (calculateScore() < calculateGoal()) {
-            goalIcon.setBackgroundResource(R.drawable.goal_reached);
-            goal.setBackgroundColor(Color.parseColor("#92D261"));
+            goalIcon.setBackgroundResource(R.drawable.ic_check_white_48dp);
+            goal.setBackgroundColor(Color.parseColor("#396e11"));
         } else {
-            goalIcon.setBackgroundResource(R.drawable.goal_not_reached);
-            goal.setBackgroundColor(Color.parseColor("#852f05"));
+            goalIcon.setBackgroundResource(R.drawable.ic_dnd_forwardslash_white_48dp);
+            goal.setBackgroundColor(Color.parseColor("#f37639"));
         }
 
-        goal.setText(Integer.toString(calculateGoal()));
+        goal.setText("Goal: " + Integer.toString(calculateGoal()));
 
         carName.setText((vehicles == null || vehicles.length == 0) ? "Unknown" : vehicles[vehicle].getNameDescription());
 
         fuelLevel.setText((vehicles == null || vehicles.length == 0) ?
-                "Fuel Level: 0" : "Fuel Level: " + Integer.toString((int) vehicles[vehicle].FuelLevel));
+                "Remaining Fuel: 0%" : "Remaining Fuel: " + Integer.toString((int) vehicles[vehicle].FuelLevel)+ "%");
 
-        totalDistance.setText("Total Distance: " + Integer.toString(totalDistanceInt));
+        totalDistance.setText("Total Distance: " + Integer.toString(totalDistanceInt) + " km");
+
+        String r = String.format("%.2f", vehicles[vehicle].LastFuelEfficiency);
+
+        lastFuelE.setText((vehicles == null || vehicles.length == 0) ?
+                "Most Recent Fuel Efficiency: N/A" : "Most Recent Fuel Efficiency: " + r + " L/100km");
+
+        lastDistance.setText((vehicles == null || vehicles.length == 0) ? "Most Recent Distance: N/A" :
+                "Most Recent Distance: " + Integer.toString((int) vehicles[vehicle].LastDistance) + " km");
     }
 
 
@@ -86,7 +96,7 @@ public class CarActivity extends Activity {
         return sortedTrips;
     }
 
-    public int calculateScore() {
+    public float calculateScore() {
         float result = 0;
         float distance = 0;
         List<Trip> trips = sortTrips();
@@ -97,19 +107,16 @@ public class CarActivity extends Activity {
             }
 
             totalDistanceInt = (int) distance;
-            return  (int) (result/distance);
+            return (result/distance);
         } else {
             totalDistanceInt = (int) distance;
-            return  (int) result;
+            return result;
         }
 
     }
 
     public int calculateGoal() {
-        int goal = 15;
-        if (goal > calculateScore()) {
-            goalMet = true;
-        }
+        int goal = 5;
         return goal;
     }
 

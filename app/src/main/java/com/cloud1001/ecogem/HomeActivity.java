@@ -47,14 +47,16 @@ public class HomeActivity extends Activity {
         goal.setText("Goal:" + Integer.toString(calculateGoal()));
 
         if (calculateFuelScore() < calculateGoal()) {
-            goalIcon.setBackgroundResource(R.drawable.goal_reached);
-            goal.setBackgroundColor(Color.parseColor("#92D261"));
+            goalIcon.setBackgroundResource(R.drawable.ic_check_white_48dp);
+            goal.setBackgroundColor(Color.parseColor("#396e11"));
         } else {
-            goalIcon.setBackgroundResource(R.drawable.goal_not_reached);
-            goal.setBackgroundColor(Color.parseColor("#852f05"));
+            goalIcon.setBackgroundResource(R.drawable.ic_dnd_forwardslash_white_48dp);
+            goal.setBackgroundColor(Color.parseColor("#f37639"));
         }
 
-        fuelScore.setText(Integer.toString(calculateFuelScore()));
+        String s = String.format("%.2f", calculateFuelScore());
+
+        fuelScore.setText(s);
 
     }
 
@@ -68,23 +70,23 @@ public class HomeActivity extends Activity {
         startActivity(new Intent(this, CouponsActivity.class));
     }
 
-    public int calculateFuelScore() {
+    public float calculateFuelScore() {
         float fuel = 0;
         float totalDistance = 0;
-        if (singleton.userTrips  == null) {
+        if (singleton.userTrips == null) {
             return 0;
         } else {
             for (Trip t : singleton.userTrips) {
                 fuel += t.FuelEfficiency * t.Distance;
                 totalDistance += t.Distance;
             }
-            return (int) (fuel / totalDistance);
+            return (fuel / totalDistance);
         }
 
     }
 
     public int calculateGoal() {
-        return 15;
+        return 5;
     }
 
 
