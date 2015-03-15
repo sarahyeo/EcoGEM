@@ -89,9 +89,6 @@ public class LogActivity extends Activity{
                     " L/100km\n");
         }
 
-        Button backButton = (Button) findViewById(R.id.buttonBack);
-        backButton.setBackgroundResource(R.drawable.button_background);
-        backButton.setTextColor(Color.BLACK);
     }
 
     private TextView getTextView(int i) {
