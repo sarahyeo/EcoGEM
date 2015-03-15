@@ -25,19 +25,6 @@ import java.util.List;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
-               /*
-            requestWindowFeature(Window.FEATURE_NO_TITLE);
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-            getWindow().getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE);*/
-
             setContentView(R.layout.activity_vehicle);
 
             userVehicles = Singleton.getInstance().userVehicles;
@@ -56,16 +43,16 @@ import java.util.List;
             for (int i = 0; i < userVehicles.length; i++) {
                 switch (i) {
                     case 0:
-                        text.set(i, (TextView) findViewById(R.id.button0));
+                        text.add(i, (TextView) findViewById(R.id.button0));
                         findViewById(R.id.button1).setVisibility(View.GONE);
                         findViewById(R.id.button2).setVisibility(View.GONE);
                         break;
                     case 1:
-                        text.set(i, (TextView) findViewById(R.id.button1));
+                        text.add(i, (TextView) findViewById(R.id.button1));
                         findViewById(R.id.button1).setVisibility(View.VISIBLE);
                         break;
                     case 2:
-                        text.set(i, (TextView) findViewById(R.id.button2));
+                        text.add(i, (TextView) findViewById(R.id.button2));
                         findViewById(R.id.button2).setVisibility(View.VISIBLE);
                         break;
                 }
