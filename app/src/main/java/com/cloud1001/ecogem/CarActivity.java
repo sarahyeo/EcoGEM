@@ -22,7 +22,7 @@ public class CarActivity extends Activity {
     private Vehicle[] vehicles;
     private int totalDistanceInt;
 
-    private TextView fuelScore, goal, carName, fuelLevel, totalDistance, lastFuelE, lastDistance;
+    private TextView fuelScore, goal, carName, fuelLevel, totalDistance, lastFuelE, lastDistance, scoreHeader;
     private ImageView goalIcon;
 
     @Override
@@ -44,6 +44,7 @@ public class CarActivity extends Activity {
         totalDistance = (TextView)findViewById(R.id.totalDistance);
         lastFuelE = (TextView)findViewById(R.id.lastFuelE);
         lastDistance = (TextView)findViewById(R.id.lastDistance);
+        scoreHeader = (TextView)findViewById(R.id.scoreHeader);
 
         initScore();
     }
@@ -57,9 +58,14 @@ public class CarActivity extends Activity {
         if (calculateScore() < calculateGoal()) {
             goalIcon.setBackgroundResource(R.drawable.ic_check_white_48dp);
             goal.setBackgroundColor(Color.parseColor("#396e11"));
+            fuelScore.setBackgroundColor(Color.parseColor("#52961E"));
+            scoreHeader.setBackgroundColor(Color.parseColor("#52961E"));
+
         } else {
             goalIcon.setBackgroundResource(R.drawable.ic_dnd_forwardslash_white_48dp);
-            goal.setBackgroundColor(Color.parseColor("#f37639"));
+            goal.setBackgroundColor(Color.parseColor("#e67e22"));
+            fuelScore.setBackgroundColor(Color.parseColor("#d35400"));
+            scoreHeader.setBackgroundColor(Color.parseColor("#d35400"));
         }
 
         goal.setText("Goal: " + Integer.toString(calculateGoal()));

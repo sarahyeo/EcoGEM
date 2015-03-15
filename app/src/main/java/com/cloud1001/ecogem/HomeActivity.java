@@ -44,14 +44,19 @@ public class HomeActivity extends Activity {
         // Show user data
         mUserName.setText("Hello " + singleton.currentUser.UserName);
 
-        goal.setText("Goal:" + Integer.toString(calculateGoal()));
+        goal.setText("Goal: " + Integer.toString(calculateGoal()));
 
         if (calculateFuelScore() < calculateGoal()) {
             goalIcon.setBackgroundResource(R.drawable.ic_check_white_48dp);
             goal.setBackgroundColor(Color.parseColor("#396e11"));
+            fuelScore.setBackgroundColor(Color.parseColor("#52961E"));
+            scoreHeader.setBackgroundColor(Color.parseColor("#52961E"));
+
         } else {
             goalIcon.setBackgroundResource(R.drawable.ic_dnd_forwardslash_white_48dp);
-            goal.setBackgroundColor(Color.parseColor("#f37639"));
+            goal.setBackgroundColor(Color.parseColor("#e67e22"));
+            fuelScore.setBackgroundColor(Color.parseColor("#d35400"));
+            scoreHeader.setBackgroundColor(Color.parseColor("#d35400"));
         }
 
         String s = String.format("%.2f", calculateFuelScore());

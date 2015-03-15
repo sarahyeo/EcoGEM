@@ -8,19 +8,22 @@
     android:id="@+id/relative_layout">
 
     <TextView android:text="10" android:layout_width="250dp"
+
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
         android:singleLine="false"
         android:id="@+id/fuelScore"
         android:nestedScrollingEnabled="false"
         android:background="#52961E"
         android:textSize="60dp"
         android:textAlignment="center"
-        android:paddingLeft="10dp"
+        android:paddingLeft="20dp"
         android:paddingTop="0dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/userName"
@@ -51,6 +54,7 @@
 
     <TextView
         android:layout_width="250dp"
+        android:textColor="#ffffff"
         android:layout_height="wrap_content"
         android:text="GEM Score:"
         android:id="@+id/scoreHeader"
@@ -58,7 +62,7 @@
         android:layout_centerHorizontal="true"
         android:background="#52961E"
         android:textSize="15dp"
-        android:paddingLeft="10dp"
+        android:paddingLeft="20dp"
         android:paddingTop="10dp" />
 
     <TextView
@@ -67,10 +71,13 @@
         android:text="Goal: 8"
         android:id="@+id/goal"
         android:background="#396E11"
+        android:textColor="#ffffff"
         android:textSize="24dp"
-        android:padding="5dp"
         android:layout_above="@+id/scoreHeader"
-        android:layout_alignEnd="@+id/goalIcon" />
+        android:layout_alignEnd="@+id/goalIcon"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
 
     <ImageView
         android:layout_width="40dp"
@@ -79,5 +86,15 @@
         android:background="@drawable/goal_reached"
         android:layout_alignBottom="@+id/goal"
         android:layout_alignEnd="@+id/scoreHeader" />
+
+    <TextView
+        android:textColor="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="km/100L"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/fuelScore"
+        android:layout_alignEnd="@+id/fuelScore"
+        android:padding="10dp" />
 
 </RelativeLayout>

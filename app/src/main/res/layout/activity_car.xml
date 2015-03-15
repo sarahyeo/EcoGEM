@@ -8,6 +8,7 @@
     android:id="@+id/relative_layout">
 
     <TextView android:text="10" android:layout_width="250dp"
+        android:textColor="#ffffff"
         android:layout_height="wrap_content"
         android:singleLine="false"
         android:id="@+id/fuelScore"
@@ -15,12 +16,13 @@
         android:background="#52961E"
         android:textSize="60dp"
         android:textAlignment="center"
-        android:paddingLeft="10dp"
+        android:paddingLeft="20dp"
         android:paddingTop="0dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
+        android:textColor="#ffffff"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="GEM Score:"
@@ -29,19 +31,21 @@
         android:layout_centerHorizontal="true"
         android:background="#52961E"
         android:textSize="15dp"
-        android:paddingLeft="10dp"
+        android:paddingLeft="20dp"
         android:paddingTop="10dp" />
 
     <TextView
+        android:textColor="#ffffff"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:text="Goal: 8"
         android:id="@+id/goal"
         android:background="#396E11"
         android:textSize="24dp"
-        android:padding="5dp"
         android:layout_above="@+id/scoreHeader"
-        android:layout_alignEnd="@+id/goalIcon" />
+        android:layout_alignEnd="@+id/goalIcon"
+        android:paddingTop="5dp"
+        android:paddingLeft="20dp" />
 
     <ImageView
         android:layout_width="40dp"
@@ -52,6 +56,7 @@
         android:layout_alignEnd="@+id/scoreHeader" />
 
     <TextView
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Car A"
@@ -62,6 +67,7 @@
         android:textSize="30dp" />
 
     <TextView
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fuel Level"
@@ -71,6 +77,7 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total Distance"
@@ -89,6 +96,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Last Fuel Efficentcy"
@@ -97,11 +105,22 @@
         android:layout_below="@+id/totalDistance" />
 
     <TextView
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Last Distance"
         android:id="@+id/lastDistance"
         android:layout_below="@+id/lastFuelE"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:textColor="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="km/100L"
+        android:id="@+id/textView3"
+        android:layout_alignBottom="@+id/fuelScore"
+        android:layout_alignEnd="@+id/fuelScore"
+        android:padding="10dp" />
 
 </RelativeLayout>
