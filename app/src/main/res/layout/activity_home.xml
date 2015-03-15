@@ -35,17 +35,21 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#22313F"
+        android:textColor="#ffffff"
         android:text="Coupons"
         android:id="@+id/couponButton"
         android:onClick="onCouponsButton"
         android:clickable="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Vehicles"
+        android:background="#2c3e50"
+        android:textColor="#ffffff"
         android:id="@+id/vehiclesButton"
         android:clickable="true"
         android:onClick="onVehicleButton"
@@ -92,9 +96,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="km/100L"
-        android:id="@+id/textView2"
+        android:id="@+id/imageButton"
         android:layout_alignBottom="@+id/fuelScore"
         android:layout_alignEnd="@+id/fuelScore"
         android:padding="10dp" />
+
+    <ImageView
+        android:layout_width="500px"
+        android:layout_height="350px"
+        android:id="@+id/carImage"
+        android:layout_below="@+id/fuelScore"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/car_flat" />
 
 </RelativeLayout>

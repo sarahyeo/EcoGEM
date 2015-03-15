@@ -16,7 +16,9 @@
         android:id="@+id/oauth2LoginButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:fontFamily="sans-serif-medium" />
+        android:fontFamily="sans-serif-medium"
+        android:background="#2c3e50"
+        android:textColor="#ffffff"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -26,6 +28,8 @@
         android:onClick="onContinueButton"
         android:focusable="false"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="#2c3e50"
+        android:textColor="#ffffff"/>
 
 </RelativeLayout>

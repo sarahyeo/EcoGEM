@@ -104,7 +104,7 @@ public class HomeActivity extends Activity {
     }
 
     public int calculateGoal() {
-        return 5;
+        return 15;
     }
 
 

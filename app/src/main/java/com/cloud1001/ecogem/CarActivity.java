@@ -137,7 +137,7 @@ public class CarActivity extends Activity {
     }
 
     public int calculateGoal() {
-        int goal = 5;
+        int goal = 55;
         return goal;
     }
 
