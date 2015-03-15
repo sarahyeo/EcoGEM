@@ -25,6 +25,7 @@
 
     <TextView
         android:textColor="#ffffff"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/userName"
@@ -88,7 +89,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:id="@+id/goalIcon"
-        android:background="@drawable/goal_reached"
+        android:background="@drawable/goal_yes"
         android:layout_alignBottom="@+id/goal"
         android:layout_alignEnd="@+id/scoreHeader" />
 

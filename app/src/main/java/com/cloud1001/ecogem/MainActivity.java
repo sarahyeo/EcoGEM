@@ -20,6 +20,7 @@ import com.mojio.mojiosdk.models.Trip;
 import com.mojio.mojiosdk.models.User;
 import com.mojio.mojiosdk.models.Vehicle;
 
+import java.util.Calendar;
 import java.util.HashMap;
 
 
@@ -97,7 +98,7 @@ public class MainActivity extends Activity {
         if (requestCode == OAUTH_REQUEST) {
             // We now have a stored access token
             if (resultCode == RESULT_OK) {
-                Toast.makeText(MainActivity.this, "Logged in successfully", Toast.LENGTH_LONG).show();
+                
                 mLoginButton.setVisibility(View.GONE);
 
                 getCurrentUser(); // Now attempt to get user info
@@ -180,10 +181,25 @@ public class MainActivity extends Activity {
     // Now that we have the current user, we can use their ID to get data
     private void getUserTrips() {
         String entityPath = String.format("Users/%s/Trips", mCurrentUser._id); //!!!??!?!?!?!
+
+        Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH) + 1;
+        int day = c.get(Calendar.DAY_OF_MONTH);
+
+        String beginning = Integer.toString(year) + "."
+                + String.format("%02d", month) + ".01";
+
+        String end = Integer.toString(year) + "."
+                + String.format("%02d", month) + "." +
+                String.format("%02d", day);
+
+
         HashMap<String, String> queryParams = new HashMap<>();
         queryParams.put("limit", "50");
         queryParams.put("sortBy", "StartTime");
         queryParams.put("desc", "true");
+        queryParams.put("criteria", "Time=" + beginning + "-" + end);
 
         mMojio.get(Trip[].class, entityPath, queryParams, new MojioClient.ResponseListener<Trip[]>() {
             @Override
