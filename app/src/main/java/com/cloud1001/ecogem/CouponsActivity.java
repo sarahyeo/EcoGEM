@@ -28,9 +28,6 @@ public class CouponsActivity extends Activity {
             couponCurrent.setBackgroundResource(R.drawable.coupon);
         }
 
-        Button backButton = (Button) findViewById(R.id.buttonBack);
-        backButton.setBackgroundResource(R.drawable.button_background);
-        backButton.setTextColor(Color.BLACK);
     }
 
     public int calculateFuelScore() {
