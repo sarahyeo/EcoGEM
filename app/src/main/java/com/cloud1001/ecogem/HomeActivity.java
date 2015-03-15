@@ -45,7 +45,9 @@ public class HomeActivity extends Activity {
 
         goal.setText("Goal:" + Integer.toString(calculateGoal()));
 
-        goalIcon.setBackgroundResource(R.drawable.goal_reached);
+        if (calculateFuelScore() < calculateGoal()) {
+            goalIcon.setBackgroundResource(R.drawable.goal_reached);
+        }
 
         fuelScore.setText(Integer.toString(calculateFuelScore()));
 

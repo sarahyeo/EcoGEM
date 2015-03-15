@@ -22,14 +22,11 @@ public class CouponsActivity extends Activity {
     }
 
     public void initImageView() {
-        List<ImageView> image = new ArrayList<>();
-        image.add((ImageView) findViewById(R.id.imageCoupon));
-        image.add((ImageView) findViewById(R.id.imageNext));
+        ImageView couponCurrent = (ImageView) findViewById(R.id.imageCoupon);
 
         if (calculateFuelScore() < calculateGoal()) {
-            image.get(0).setBackgroundResource(R.drawable.coupon);
+            couponCurrent.setBackgroundResource(R.drawable.coupon);
         }
-        image.get(1).setBackgroundResource(R.drawable.coupon_next);
 
         Button backButton = (Button) findViewById(R.id.buttonBack);
         backButton.setBackgroundResource(R.drawable.button_background);
