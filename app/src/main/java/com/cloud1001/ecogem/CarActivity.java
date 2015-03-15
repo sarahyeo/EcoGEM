@@ -85,7 +85,7 @@ public class CarActivity extends Activity {
 
         goal.setText("Goal: " + Integer.toString(calculateGoal()));
 
-        carName.setText((vehicles == null || vehicles.length == 0) ? "Unknown" : vehicles[vehicle].getNameDescription());
+        carName.setText((vehicles == null || vehicles.length == 0) ? "UNKNOWN" : vehicles[vehicle].getNameDescription().toUpperCase());
 
         fuelLevel.setText((vehicles == null || vehicles.length == 0) ?
                 "Remaining Fuel: 0%" : "Remaining Fuel: " + Integer.toString((int) vehicles[vehicle].FuelLevel)+ "%");

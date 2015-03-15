@@ -55,7 +55,7 @@ public class HomeActivity extends Activity {
     public void initMap() {
 
         // Show user data
-        mUserName.setText("Hello " + singleton.currentUser.UserName);
+        mUserName.setText(("Hello " + singleton.currentUser.UserName).toUpperCase());
 
         goal.setText("Goal: " + Integer.toString(calculateGoal()));
 
