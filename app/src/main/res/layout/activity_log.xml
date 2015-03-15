@@ -26,60 +26,80 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/text_0"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/text_1"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/text_2"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/text_3"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/text_4"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/text_5"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/text_6"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/text_7"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/text_8"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/text_9"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <Button
                 android:layout_width="110dp"

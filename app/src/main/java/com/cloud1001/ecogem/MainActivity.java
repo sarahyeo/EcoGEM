@@ -1,8 +1,10 @@
 package com.cloud1001.ecogem;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -55,6 +57,10 @@ public class MainActivity extends Activity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.setStatusBarColor(Color.parseColor("#00c10d"));
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#006400")));
+
         // Setup mojio client with app keys.
         mMojio = new MojioClient(this, MOJIO_APP_ID, null, REDIRECT_URL);
         singleton = Singleton.getInstance();

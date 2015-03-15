@@ -42,7 +42,6 @@ public class CouponsActivity extends Activity {
             }
             return (int) (fuel / totalDistance);
         }
-
     }
 
     public int calculateGoal() {

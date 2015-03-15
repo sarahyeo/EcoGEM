@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.mojio.mojiosdk.MojioClient;
 import com.mojio.mojiosdk.models.Trip;
 
 public class HomeActivity extends Activity {
@@ -47,16 +46,17 @@ public class HomeActivity extends Activity {
         goal.setText("Goal: " + Integer.toString(calculateGoal()));
 
         if (calculateFuelScore() < calculateGoal()) {
-            goalIcon.setBackgroundResource(R.drawable.ic_check_white_48dp);
+            goalIcon.setBackgroundResource(R.drawable.goal_yes);
             goal.setBackgroundColor(Color.parseColor("#396e11"));
             fuelScore.setBackgroundColor(Color.parseColor("#52961E"));
             scoreHeader.setBackgroundColor(Color.parseColor("#52961E"));
 
         } else {
-            goalIcon.setBackgroundResource(R.drawable.ic_dnd_forwardslash_white_48dp);
+            goalIcon.setBackgroundResource(R.drawable.goal_no);
             goal.setBackgroundColor(Color.parseColor("#e67e22"));
             fuelScore.setBackgroundColor(Color.parseColor("#d35400"));
             scoreHeader.setBackgroundColor(Color.parseColor("#d35400"));
+
         }
 
         String s = String.format("%.2f", calculateFuelScore());
@@ -87,7 +87,6 @@ public class HomeActivity extends Activity {
             }
             return (fuel / totalDistance);
         }
-
     }
 
     public int calculateGoal() {
