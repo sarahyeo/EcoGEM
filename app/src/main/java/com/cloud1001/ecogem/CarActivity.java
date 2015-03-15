@@ -59,11 +59,12 @@ public class CarActivity extends Activity {
 
         goal.setText(Integer.toString(calculateGoal()));
 
-        //carName.setText(vehicles[vehicle].getNameDescription());
+        carName.setText((vehicles == null || vehicles.length == 0) ? "Unknown" : vehicles[vehicle].getNameDescription());
 
-        //fuelLevel.setText(Integer.toString((int) vehicles[vehicle].FuelLevel));
+        fuelLevel.setText((vehicles == null || vehicles.length == 0) ?
+                "Fuel Level: 0" : "Fuel Level: " + Integer.toString((int) vehicles[vehicle].FuelLevel));
 
-        totalDistance.setText(Integer.toString(totalDistanceInt));
+        totalDistance.setText("Total Distance: " + Integer.toString(totalDistanceInt));
     }
 
 
