@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,10 +57,11 @@ public class MainActivity extends Activity {
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.setStatusBarColor(Color.parseColor("#00c10d"));
+        window.setStatusBarColor(Color.parseColor("#87D37C"));
 
         ActionBar actionBar = getActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#006400")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#26A65B")));
+        actionBar.setTitle(Html.fromHtml("<font color='#ffffff'>EcoGEM</font>"));
 
         // Setup mojio client with app keys.
         mMojio = new MojioClient(this, MOJIO_APP_ID, null, REDIRECT_URL);
