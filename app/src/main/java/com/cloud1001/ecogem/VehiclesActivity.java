@@ -34,10 +34,10 @@ import java.util.List;
             Window window = this.getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(Color.parseColor("#87D37C"));
+            window.setStatusBarColor(Color.parseColor("#2ABB9B"));
 
             ActionBar actionBar = getActionBar();
-            actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#26A65B")));
+            actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#019875")));
             actionBar.setTitle(Html.fromHtml("<font color='#ffffff'>EcoGEM</font>"));
 
             userVehicles = Singleton.getInstance().userVehicles;

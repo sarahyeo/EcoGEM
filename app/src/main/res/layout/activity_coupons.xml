@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#92D261">
+    android:background="#1BA39C">
 
     <ScrollView
 
@@ -74,9 +74,9 @@
         android:layout_marginLeft="10dp"
         android:layout_gravity="center"
         android:onClick="onBackButton"
+        android:background="#2c3e50"
+        android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="44dp"
-        android:background="#2c3e50"
-        android:textColor="#ffffff"/>
+        android:layout_marginBottom="10dp" />
 </RelativeLayout>

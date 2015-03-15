@@ -27,10 +27,10 @@ public class CouponsActivity extends Activity {
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.setStatusBarColor(Color.parseColor("#87D37C"));
+        window.setStatusBarColor(Color.parseColor("#2ABB9B"));
 
         ActionBar actionBar = getActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#26A65B")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#019875")));
         actionBar.setTitle(Html.fromHtml("<font color='#ffffff'>EcoGEM</font>"));
 
         initImageView();
@@ -60,7 +60,7 @@ public class CouponsActivity extends Activity {
     }
 
     public int calculateGoal() {
-        return 15;
+        return 5;
     }
 
     public void onBackButton(View view) {

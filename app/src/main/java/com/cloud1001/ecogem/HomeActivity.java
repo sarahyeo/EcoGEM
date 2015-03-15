@@ -33,10 +33,10 @@ public class HomeActivity extends Activity {
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.setStatusBarColor(Color.parseColor("#87D37C"));
+        window.setStatusBarColor(Color.parseColor("#2ABB9B"));
 
         ActionBar actionBar = getActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#26A65B")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#019875")));
         actionBar.setTitle(Html.fromHtml("<font color='#ffffff'>EcoGEM</font>"));
 
         singleton = Singleton.getInstance();
@@ -61,9 +61,9 @@ public class HomeActivity extends Activity {
 
         if (calculateFuelScore() < calculateGoal()) {
             goalIcon.setBackgroundResource(R.drawable.goal_yes);
-            goal.setBackgroundColor(Color.parseColor("#396e11"));
-            fuelScore.setBackgroundColor(Color.parseColor("#52961E"));
-            scoreHeader.setBackgroundColor(Color.parseColor("#52961E"));
+            goal.setBackgroundColor(Color.parseColor("#26A65B"));
+            fuelScore.setBackgroundColor(Color.parseColor("#1E824C"));
+            scoreHeader.setBackgroundColor(Color.parseColor("#1E824C"));
 
         } else {
             goalIcon.setBackgroundResource(R.drawable.goal_no);
@@ -104,7 +104,7 @@ public class HomeActivity extends Activity {
     }
 
     public int calculateGoal() {
-        return 15;
+        return 5;
     }
 
 

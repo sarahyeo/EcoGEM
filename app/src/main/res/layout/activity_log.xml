@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#92D261">
+    android:background="#1BA39C">
 
     <ScrollView
         android:id="@+id/scrollView1"
@@ -23,6 +23,7 @@
                 android:layout_gravity="center_horizontal" android:textStyle="bold" android:textSize="50sp"
                 android:layout_marginTop="10dp" android:layout_marginBottom="10dp"/>
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -31,6 +32,7 @@
                 android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -39,6 +41,7 @@
                 android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -47,6 +50,7 @@
                 android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -55,6 +59,7 @@
                 android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -63,6 +68,7 @@
                 android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -71,6 +77,7 @@
                 android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -79,6 +86,7 @@
                 android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -87,6 +95,7 @@
                 android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -95,6 +104,7 @@
                 android:paddingTop="10dp"
                 android:textSize="40sp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -114,7 +124,8 @@
                 android:layout_gravity="center"
                 android:onClick="onBackButton"
                 android:background="#2c3e50"
-                android:textColor="#ffffff"/>
+                android:textColor="#ffffff"
+                android:layout_marginBottom="10dp" />
         </LinearLayout>
     </ScrollView>
 
