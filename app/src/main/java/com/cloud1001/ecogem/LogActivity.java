@@ -27,7 +27,7 @@ public class LogActivity extends Activity{
             } //hide the unneeded ones
         List<TextView> text = new ArrayList<>(); //list of log texts
         for (int i=0; i<numLogs; i++) {
-            text.set(i, getTextView(i));
+            text.add(getTextView(i));
             text.get(i).setTextSize(20);
 
             String startTime = Singleton.getInstance().userTrips[Singleton.getInstance().userTrips.length - i - 1].StartTime;

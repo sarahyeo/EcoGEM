@@ -17,14 +17,14 @@ public class CouponsActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_coupons);
         initImageView();
     }
 
     public void initImageView() {
         List<ImageView> image = new ArrayList<>();
-        image.set(0, (ImageView) findViewById(R.id.imageCoupon));
-        image.set(1, (ImageView) findViewById(R.id.imageNext));
+        image.add((ImageView) findViewById(R.id.imageCoupon));
+        image.add((ImageView) findViewById(R.id.imageNext));
 
         if (calculateFuelScore() < calculateGoal()) {
             image.get(0).setBackgroundResource(R.drawable.coupon);
