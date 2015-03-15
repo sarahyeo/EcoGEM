@@ -2,6 +2,7 @@ package com.cloud1001.ecogem;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -51,10 +52,12 @@ public class CarActivity extends Activity {
 
         fuelScore.setText(Integer.toString(calculateScore()));
 
-        if (goalMet) {
+        if (calculateScore() < calculateGoal()) {
             goalIcon.setBackgroundResource(R.drawable.goal_reached);
+            goal.setBackgroundColor(Color.parseColor("#92D261"));
         } else {
-            goalIcon.setBackgroundResource(R.drawable.goal_reached);
+            goalIcon.setBackgroundResource(R.drawable.goal_not_reached);
+            goal.setBackgroundColor(Color.parseColor("#852f05"));
         }
 
         goal.setText(Integer.toString(calculateGoal()));

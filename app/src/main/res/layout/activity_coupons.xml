@@ -58,18 +58,20 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/coupon_next" />
 
-            <Button
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="BACK"
-                android:id="@+id/back_button"
-                android:height="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_alignTop="@+id/log_button"
-                android:layout_alignParentStart="true"
-                android:layout_gravity="center"
-                android:onClick="onBackButton"/>
         </LinearLayout>
 
     </ScrollView>
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:text="BACK"
+        android:id="@+id/back_button"
+        android:height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:onClick="onBackButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp" />
 </RelativeLayout>

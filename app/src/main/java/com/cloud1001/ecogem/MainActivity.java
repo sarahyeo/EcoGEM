@@ -167,6 +167,7 @@ public class MainActivity extends Activity {
     private void getUserTrips() {
         String entityPath = String.format("Users/%s/Trips", mCurrentUser._id); //!!!??!?!?!?!
         HashMap<String, String> queryParams = new HashMap<>();
+        queryParams.put("limit", "10");
         queryParams.put("sortBy", "StartTime");
         queryParams.put("desc", "true");
 
