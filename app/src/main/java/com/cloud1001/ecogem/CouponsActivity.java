@@ -49,7 +49,7 @@ public class CouponsActivity extends Activity {
     }
 
     public int calculateGoal() {
-        return 8;
+        return 15;
     }
 
     public void onBackButton(View view) {

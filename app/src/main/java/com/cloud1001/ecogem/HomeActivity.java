@@ -79,7 +79,7 @@ public class HomeActivity extends Activity {
     }
 
     public int calculateGoal() {
-        return 8;
+        return 15;
     }
 
 

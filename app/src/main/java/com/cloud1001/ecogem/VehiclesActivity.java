@@ -56,12 +56,12 @@ import java.util.List;
                         findViewById(R.id.button2).setVisibility(View.VISIBLE);
                         break;
                 }
-                String vehicleName = userVehicles[i].VIN;
-                if(vehicleName == null || vehicleName.isEmpty()){
+                String vehicleName = userVehicles[i].getNameDescription();
+                if(vehicleName == null){
                     text.get(i).setText("Unknown");
                 }
                 else{
-                    text.get(i).setText(userVehicles[i].VIN);
+                    text.get(i).setText(vehicleName);
                 }
             }
         }

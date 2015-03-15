@@ -103,7 +103,7 @@ public class CarActivity extends Activity {
     }
 
     public int calculateGoal() {
-        int goal = 8;
+        int goal = 15;
         if (goal > calculateScore()) {
             goalMet = true;
         }
