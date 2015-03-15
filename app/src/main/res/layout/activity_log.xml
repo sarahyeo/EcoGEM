@@ -17,7 +17,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LOGS"
-                android:id="@+id/textViewSettings" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+                android:id="@+id/textLogs" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal" android:textStyle="bold" android:textSize="50sp"
                 android:layout_marginTop="10dp" android:layout_marginBottom="10dp"/>
             <TextView

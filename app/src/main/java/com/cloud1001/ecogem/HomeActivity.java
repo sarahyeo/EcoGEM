@@ -11,9 +11,6 @@ import android.widget.TextView;
 import com.mojio.mojiosdk.MojioClient;
 import com.mojio.mojiosdk.models.Trip;
 
-/**
- * Created by Sarah on 2015-03-14.
- */
 public class HomeActivity extends Activity {
 
     private Button mLoginButton, mCouponButton, mVehiclesButton;
