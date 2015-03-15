@@ -35,12 +35,12 @@ public class LogActivity extends Activity{
     }
 
     public void initTextView() {
+        int numLogs = Math.min(Singleton.getInstance().userTrips.length, 10); //number of logs, max 10
         if (Singleton.getInstance().userTrips.length == 0 || Singleton.getInstance().userTrips == null)
-            for (int i=0; i<10; i++) {
+            for (int i=9; i>=Singleton.getInstance().userTrips.length; i--) {
                 getTextView(i).setVisibility(View.GONE);
-            }
-        int numLogs = Math.min(Singleton.getInstance().userTrips.length, 10);
-        List<TextView> text = new ArrayList<>();
+            } //hide the unneeded ones
+        List<TextView> text = new ArrayList<>(); //list of log texts
         for (int i=0; i<numLogs; i++) {
             text.set(i, getTextView(i));
             text.get(i).setTextSize(20);
@@ -48,10 +48,10 @@ public class LogActivity extends Activity{
             String startTime = Singleton.getInstance().userTrips[Singleton.getInstance().userTrips.length - i - 1].StartTime;
             String endTime = Singleton.getInstance().userTrips[Singleton.getInstance().userTrips.length - i - 1].EndTime;
             String delims = "-|:|T|Z|\\.";
-            String[] startTimeSplit = startTime.split(delims);
-            String[] endTimeSplit = endTime.split(delims);
+            String[] startTimeSplit = startTime.split(delims); //parse start time into array
+            String[] endTimeSplit = endTime.split(delims); //parse end time into array
 
-            int durationDays, durationHours, durationMinutes, durationSeconds;
+            int durationDays, durationHours, durationMinutes, durationSeconds; //duration of trip
 
             int secondsInMonths = 0;
             for (int j =Integer.parseInt(startTimeSplit[1]); j > 0; j--) {
@@ -59,7 +59,7 @@ public class LogActivity extends Activity{
             }
 
             int startTimeSeconds = Integer.parseInt(startTimeSplit[5]) + //seconds
-            60 * Integer.parseInt(startTimeSplit[4]) + //minutes
+                    60 * Integer.parseInt(startTimeSplit[4]) + //minutes
                     60 * 60 * Integer.parseInt(startTimeSplit[3]) + //hours
                     60 * 60 * 24 * Integer.parseInt(startTimeSplit[2]) + //days
                     secondsInMonths + //months
@@ -78,7 +78,7 @@ public class LogActivity extends Activity{
                             (Integer.parseInt(endTimeSplit[0]) % 100) +
                             (Integer.parseInt(endTimeSplit[0]) % 400)); //leap years
 
-            int differenceStartEnd = endTimeSeconds - startTimeSeconds;
+            int differenceStartEnd = endTimeSeconds - startTimeSeconds; //duration in seconds
 
             durationDays = differenceStartEnd / (60 * 60 * 24);
             differenceStartEnd = differenceStartEnd % (60 * 60 * 24);
