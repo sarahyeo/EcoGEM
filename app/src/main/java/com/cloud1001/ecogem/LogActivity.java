@@ -21,10 +21,9 @@ public class LogActivity extends Activity{
 
     public void initTextView() {
         int numLogs = Math.min(Singleton.getInstance().userTrips.length, 10); //number of logs, max 10
-        if (Singleton.getInstance().userTrips.length == 0 || Singleton.getInstance().userTrips == null)
-            for (int i=9; i>=Singleton.getInstance().userTrips.length; i--) {
-                getTextView(i).setVisibility(View.GONE);
-            } //hide the unneeded ones
+        for (int i=9; i>=Singleton.getInstance().userTrips.length; i--) {
+            getTextView(i).setVisibility(View.GONE);
+        } //hide the unneeded ones
         List<TextView> text = new ArrayList<>(); //list of log texts
         for (int i=0; i<numLogs; i++) {
             text.add(getTextView(i));
@@ -139,10 +138,10 @@ public class LogActivity extends Activity{
     private int numberDaysInMonth(String month, String year) {
         switch(month) {
             case "01": return 31;
-            case "02": if (Integer.parseInt(year) % 4 != 0) return 28;
-                else if (Integer.parseInt(year) % 100 != 0) return 29;
-                else if (Integer.parseInt(year) % 400 != 0) return 28;
-                else return 29;
+            case "02": if (Integer.parseInt(year) % 4 != 0) {return 28;}
+                else if (Integer.parseInt(year) % 100 != 0) {return 29;}
+                else if (Integer.parseInt(year) % 400 != 0) {return 28;}
+                else {return 29;}
             case "03": return 31;
             case "04": return 30;
             case "05": return 31;
