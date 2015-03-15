@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/userName"
-        android:text="Hello Bob"
+        android:text="Hello"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textSize="40dp" />
@@ -64,7 +64,7 @@
     <TextView
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:text="Goal: 8"
+        android:text="Goal:"
         android:id="@+id/goal"
         android:background="#396E11"
         android:textSize="24dp"
